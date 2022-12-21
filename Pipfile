@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+ipython = ">=7.31.1"
+isort = "*"
+pytest = "*"
+pytest-cov ="*"
+pyhamcrest = "*"
+typing-extensions ="*"
+
+[requires]
+python_version = "3.9"
