@@ -7,6 +7,13 @@ on:
 
 jobs:
   hello_world_job:
+    strategy:
+      matrix:
+        include:
+          - Greeting: "Hello World"
+            Name: "Dan"
+          - Greeting: "What's going on"
+            Name: "Steve"
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
@@ -56,7 +63,8 @@ jobs:
           which pip
           which pip3
           which pipenv
-      - run: python3 ${GITHUB_WORKSPACE}/python.py
+      # - run: python3 ${GITHUB_WORKSPACE}/python.py
       - run: echo $SHELL
+      - run: echo "${{ matrix.Greeting }} ${{ matrix.Name }}"
     
 
