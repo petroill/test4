@@ -3,8 +3,13 @@
 import os
 import subprocess
 from datetime import datetime
+import sys
+from sys import argv
 
-print("f'${Greeting} from ${Country}'")
+Greeting = sys.argv[1]
+Name = sys.argv[2]
+
+print(f"{Greeting} {Name}")
 print(datetime.now())
 
 command = subprocess.run(['ls'], stdout=subprocess.PIPE).stdout.decode('utf-8')
